@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero_image",
+      "description": "A modern laboratory with a scientist looking into a microscope.",
+      "imageUrl": "https://images.unsplash.com/photo-1758101512269-660feabf64fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsYWJvcmF0b3J5fGVufDB8fHx8MTc2NjAzNzQ5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern laboratory"
+    },
+    {
+      "id": "lab_microscope",
+      "description": "Close-up of an advanced laboratory microscope.",
+      "imageUrl": "https://images.unsplash.com/photo-1581091007718-0c50d599bfd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtaWNyb3Njb3BlfGVufDB8fHx8MTc2NTk4NzE0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microscope"
+    },
+    {
+      "id": "lab_centrifuge",
+      "description": "A digital centrifuge machine in a lab.",
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYWIlMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzY1OTQ1MDY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lab equipment"
+    },
+    {
+      "id": "medical_ecg",
+      "description": "A 12-channel ECG machine with its screen showing a heartbeat.",
+      "imageUrl": "https://images.unsplash.com/photo-1700832082152-0416a3ee5e60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtZWRpY2FsJTIwZXF1aXBtZW50fGVufDB8fHx8MTc2NTk2NTY1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical equipment"
+    },
+    {
+      "id": "medical_monitor",
+      "description": "A multi-parameter patient monitor in a hospital room.",
+      "imageUrl": "https://images.unsplash.com/photo-1572996489084-bd293caab387?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXRpZW50JTIwbW9uaXRvcnxlbnwwfHx8fDE3NjU5NjU2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "patient monitor"
+    },
+    {
+      "id": "solar_panels",
+      "description": "Solar panels installed on a residential roof on a sunny day.",
+      "imageUrl": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzb2xhciUyMHBhbmVsc3xlbnwwfHx8fDE3NjYwMTE1NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "solar panels"
+    },
+    {
+      "id": "solar_inverter",
+      "description": "A hybrid solar inverter mounted on a wall.",
+      "imageUrl": "https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzb2xhciUyMGludmVydGVyfGVufDB8fHx8MTc2NjAzNzQ5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "solar inverter"
+    },
+    {
+      "id": "contact_hero",
+      "description": "A modern office building exterior.",
+      "imageUrl": "https://images.unsplash.com/photo-1549757521-4160565ff3de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjYwMzc0OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office building"
+    }
+  ]
 }
