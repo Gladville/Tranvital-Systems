@@ -1,6 +1,5 @@
 'use client';
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect } from 'react';
+import { useActionState, useFormStatus } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -31,7 +30,7 @@ function SubmitButton() {
 }
 
 export function ProductFinderForm() {
-  const [state, formAction] = useFormState(findProductAction, initialState);
+  const [state, formAction] = useActionState(findProductAction, initialState);
 
   return (
     <Card>
