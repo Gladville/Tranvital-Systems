@@ -140,8 +140,8 @@ export default function ContactPage() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
-                    {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+                  <Button type="submit" className="w-full">
+                    Send Message
                   </Button>
                 </form>
               </Form>

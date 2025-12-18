@@ -33,17 +33,17 @@ export default function Home() {
         <div className="container px-4 md:px-6 relative z-10">
           <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
             <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-4">
+              <div className="space-y-4 text-center lg:text-left">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary-foreground sm:text-5xl xl:text-6xl/none">
                   Empowering Progress with Advanced Solutions
                 </h1>
-                <p className="max-w-[600px] text-primary-foreground/80 md:text-xl">
+                <p className="max-w-[600px] text-primary-foreground/80 md:text-xl mx-auto lg:mx-0">
                   Tranvital Systems is your trusted partner for cutting-edge
                   laboratory equipment, medical devices, and sustainable solar
                   power solutions.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
                 <Link
                   href="/products"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-accent px-8 text-sm font-medium text-accent-foreground shadow transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"

@@ -68,7 +68,7 @@ export const services: Service[] = [
 ];
 
 export const productCategories: ProductCategory[] = [
-  { id: 'all', name: 'All Products', icon: null },
+  { id: 'all', name: 'All Products' },
   { id: 'Lab', name: 'Laboratory', icon: FlaskConical },
   { id: 'Medical', name: 'Medical', icon: HeartPulse },
   { id: 'Solar', name: 'Solar Power', icon: Sun },

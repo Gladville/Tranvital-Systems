@@ -18,5 +18,5 @@ export type Service = {
 export type ProductCategory = {
   id: 'all' | 'Lab' | 'Medical' | 'Solar';
   name: string;
-  icon: LucideIcon | null;
+  icon?: LucideIcon;
 };
