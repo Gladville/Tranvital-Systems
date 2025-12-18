@@ -6,7 +6,7 @@ import {
   HeartPulse,
   LifeBuoy,
   Lightbulb,
-  SolarPanel,
+  Sun,
   Wrench,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
