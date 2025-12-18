@@ -1,5 +1,5 @@
 import type { Product, Service, ProductCategory } from '@/lib/types';
-import { FlaskConical, HeartPulse, Sun, Wrench, LifeBuoy, Laptop } from 'lucide-react';
+import { Wrench, LifeBuoy, Laptop } from 'lucide-react';
 
 export const products: Product[] = [
   {
@@ -67,9 +67,9 @@ export const services: Service[] = [
   },
 ];
 
-export const productCategories: ProductCategory[] = [
+export const productCategories: Omit<ProductCategory, 'icon'>[] = [
   { id: 'all', name: 'All Products' },
-  { id: 'Lab', name: 'Laboratory', icon: FlaskConical },
-  { id: 'Medical', name: 'Medical', icon: HeartPulse },
-  { id: 'Solar', name: 'Solar Power', icon: Sun },
+  { id: 'Lab', name: 'Laboratory', iconName: 'FlaskConical' },
+  { id: 'Medical', name: 'Medical', iconName: 'HeartPulse' },
+  { id: 'Solar', name: 'Solar Power', iconName: 'Sun' },
 ];
