@@ -7,7 +7,7 @@ export default function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        'flex items-center gap-2 text-xl font-bold font-headline',
+        'flex items-center gap-2 text-lg md:text-xl font-bold font-headline',
         className
       )}
     >

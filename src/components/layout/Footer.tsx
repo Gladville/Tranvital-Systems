@@ -6,7 +6,7 @@ import { Button } from '../ui/button';
 export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="container py-12">
+      <div className="container px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4 md:col-span-2">
             <Logo />
