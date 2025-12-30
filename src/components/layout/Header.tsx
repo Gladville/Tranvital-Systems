@@ -77,8 +77,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-           <div className="md:hidden">
+        <div className="flex items-center gap-2">
+           <div className="md:hidden ml-auto">
             <Logo />
           </div>
           <Link href="/product-finder" className="hidden md:block">
