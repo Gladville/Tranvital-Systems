@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center px-4 md:px-6">
         <div className="mr-4 hidden md:flex">
           <Logo />
         </div>
@@ -37,7 +37,7 @@ export default function Header() {
                 <div className="mb-8">
                   <Logo />
                 </div>
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4 ">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -51,10 +51,10 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                 <Link href="/product-finder" className="mt-auto">
+                 <Link href="/product-finder" className="mt-auto ">
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       <Lightbulb className="mr-2 h-5 w-5" />
-                      AI Product Finder
+                      Product Finder
                     </Button>
                   </Link>
               </div>
@@ -69,7 +69,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 'font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                pathname === link.href ? 'text-foreground' : 'text-muted-foreground'
               )}
             >
               {link.label}
@@ -84,7 +84,7 @@ export default function Header() {
           <Link href="/product-finder" className="hidden md:block">
             <Button variant="outline" className="border-accent text-accent-foreground hover:bg-accent/10 hover:text-accent-foreground">
               <Lightbulb className="mr-2 h-4 w-4" />
-              AI Finder
+              Product Finder
             </Button>
           </Link>
           <Link href="/contact">
