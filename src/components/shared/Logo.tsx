@@ -14,8 +14,8 @@ export default function Logo({ className }: { className?: string }) {
       <div className="p-1.5 bg-primary text-primary-foreground rounded-md">
         <Atom className="h-5 w-5" />
       </div>
-      <span className="text-primary">Tranvital</span>
-      <span className="text-foreground">Systems</span>
+      <span className="text-primary text-sm md:text-lg">Tranvital</span>
+      <span className="text-foreground text-sm md:text-lg ml">Systems</span>
     </Link>
   );
 }
