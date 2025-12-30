@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center px-4 md:px-6">
+      <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Logo />
         </div>
@@ -62,7 +62,7 @@ export default function Header() {
           </Sheet>
         </div>
 
-        <nav className="mr-auto hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-6 text-sm md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -77,8 +77,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-           <div className="md:hidden ml-auto">
+        <div className="ml-auto flex items-center gap-2">
+           <div className="md:hidden">
             <Logo />
           </div>
           <Link href="/product-finder" className="hidden md:block">
