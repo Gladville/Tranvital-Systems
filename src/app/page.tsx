@@ -28,48 +28,45 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48">
-        <div className="absolute inset-0 bg-primary/90 z-0"></div>
-        <div className="container px-4 md:px-6 relative z-10">
-          <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-4 text-center lg:text-left">
-                <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary-foreground sm:text-5xl xl:text-6xl/none">
+      <section className="relative w-full">
+        <div className="container px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-center py-12 md:py-24 lg:py-32">
+            <div className="relative z-10 lg:-mr-24">
+              <div className="bg-primary p-8 md:p-12 rounded-lg shadow-2xl text-primary-foreground">
+                <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">
                   Empowering Progress with Advanced Solutions
                 </h1>
-                <p className="max-w-[600px] text-primary-foreground/80 md:text-xl mx-auto lg:mx-0">
+                <p className="max-w-[600px] text-primary-foreground/80 md:text-xl mb-8">
                   Tranvital Systems is your trusted partner for cutting-edge
                   laboratory equipment, medical devices, and sustainable solar
                   power solutions.
                 </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
-                <Link
-                  href="/products"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-accent px-8 text-sm font-medium text-accent-foreground shadow transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                >
-                  Explore Products
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-primary-foreground bg-transparent px-8 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary-foreground/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                >
-                  Contact Sales
-                </Link>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link
+                    href="/products"
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-accent px-8 text-sm font-medium text-accent-foreground shadow transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    Explore Products
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex h-10 items-center justify-center rounded-md border border-primary-foreground bg-transparent px-8 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary-foreground/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    Contact Sales
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="relative group">
+            <div className="relative h-[300px] lg:h-[450px] rounded-xl overflow-hidden shadow-2xl">
               {heroImage && (
                 <Image
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
                   data-ai-hint={heroImage.imageHint}
-                  width={650}
-                  height={450}
-                  className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last -rotate-3 group-hover:rotate-0 transition-transform duration-300 ease-in-out shadow-2xl"
+                  fill
+                  className="object-cover"
                 />
               )}
-               <div className="absolute -bottom-4 -left-4 w-48 h-48 bg-accent/20 rounded-full blur-2xl -z-10"></div>
             </div>
           </div>
         </div>
