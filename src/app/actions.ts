@@ -3,6 +3,7 @@
 import { z } from 'zod';
 import { productFinderAssistant } from '@/ai/flows/product-finder-assistant';
 import { products } from '@/lib/data';
+import type { Product } from '@/lib/types';
 
 // Contact Form Action
 const contactFormSchema = z.object({
@@ -45,10 +46,10 @@ export async function findProductAction(prevState: any, formData: FormData) {
     }
 
     try {
-        const result = await productFinderAssistant({
-          requirements: validation.data.requirements,
-          products: products,
-         });
+        const result = await productFinderAssistant({ 
+            requirements: validation.data.requirements,
+            products: products 
+        });
         
         const recommendedProducts = products.filter(p => result.recommendedProductIds.includes(p.id));
 

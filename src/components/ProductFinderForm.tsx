@@ -1,5 +1,5 @@
 'use client';
-import { useActionState, useState } from 'react';
+import { useActionState, useState, useEffect } from 'react';
 import { useFormStatus } from 'react-dom';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from '@/components/ui/label';
 import { findProductAction } from '@/app/actions';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
-import { Lightbulb, Bot, AlertCircle } from 'lucide-react';
+import { Lightbulb, Bot, AlertCircle, Search } from 'lucide-react';
 import type { Product } from '@/lib/types';
 import ProductCard from './ProductCard';
 
@@ -26,7 +26,10 @@ function SubmitButton() {
           Searching...
         </>
       ) : (
-        'Find My Equipment'
+        <>
+        <Search className="mr-2 h-4 w-4" />
+        Find My Equipment
+        </>
       )}
     </Button>
   );
@@ -39,10 +42,7 @@ export function ProductFinderForm() {
   const handleFormAction = (formData: FormData) => {
     setHasSearched(true);
     formAction(formData);
-  };
-
-  const showResults =
-    hasSearched && (state.error || state.recommendedProducts.length >= 0);
+  }
 
   return (
     <Card>
@@ -75,41 +75,36 @@ export function ProductFinderForm() {
         </CardFooter>
       </form>
       
-      {showResults && (
+      {(hasSearched || state.error) && (
         <CardContent>
           <div className="mt-6">
             {state.recommendedProducts.length > 0 && (
-              <div className='space-y-4'>
-                <Alert>
-                  <Bot className="h-4 w-4" />
-                  <AlertTitle className="font-headline">AI Recommendations</AlertTitle>
-                </Alert>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {state.recommendedProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
+                <div>
+                    <h3 className="font-headline text-xl mb-4">AI Recommendations</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {state.recommendedProducts.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
                 </div>
-              </div>
             )}
-            
             {hasSearched && state.recommendedProducts.length === 0 && !state.error && (
                  <Alert>
                     <Bot className="h-4 w-4" />
-                    <AlertTitle className="font-headline">No Results</AlertTitle>
+                    <AlertTitle className="font-headline">No Products Found</AlertTitle>
                     <AlertDescription>
                         <p>We couldn't find any products that match your requirements. Please try refining your search.</p>
                     </AlertDescription>
                 </Alert>
             )}
-
             {state.error && (
-              <Alert variant="destructive">
-                <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Error</AlertTitle>
-                <AlertDescription>{state.error}</AlertDescription>
-              </Alert>
+                <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription>{state.error}</AlertDescription>
+                </Alert>
             )}
-          </div>
+            </div>
         </CardContent>
       )}
 
