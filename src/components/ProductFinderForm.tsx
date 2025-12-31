@@ -1,5 +1,5 @@
 'use client';
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -34,6 +34,15 @@ function SubmitButton() {
 
 export function ProductFinderForm() {
   const [state, formAction] = useActionState(findProductAction, initialState);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  const handleFormAction = (formData: FormData) => {
+    setHasSearched(true);
+    formAction(formData);
+  };
+
+  const showResults =
+    hasSearched && (state.error || state.recommendedProducts.length >= 0);
 
   return (
     <Card>
@@ -48,7 +57,7 @@ export function ProductFinderForm() {
             </div>
         </div>
       </CardHeader>
-      <form action={formAction}>
+      <form action={handleFormAction}>
         <CardContent>
             <div className="grid w-full gap-1.5">
                 <Label htmlFor="requirements">Your Requirements</Label>
@@ -66,7 +75,7 @@ export function ProductFinderForm() {
         </CardFooter>
       </form>
       
-      {(state.recommendedProducts.length > 0 || state.error || (state.recommendedProducts.length === 0 && !state.error && document.getElementById('requirements')?.['value'])) && (
+      {showResults && (
         <CardContent>
           <div className="mt-6">
             {state.recommendedProducts.length > 0 && (
@@ -83,7 +92,7 @@ export function ProductFinderForm() {
               </div>
             )}
             
-            {state.recommendedProducts.length === 0 && !state.error && document.getElementById('requirements')?.['value'] && (
+            {hasSearched && state.recommendedProducts.length === 0 && !state.error && (
                  <Alert>
                     <Bot className="h-4 w-4" />
                     <AlertTitle className="font-headline">No Results</AlertTitle>
