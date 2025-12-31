@@ -27,8 +27,8 @@ export default function Home() {
   const featuredProducts = products.slice(0, 3);
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
-      <section className="relative w-full">
+    <div className="flex flex-col min-h-[100dvh] mt-[-20]">
+      <section className="relative w-full mt-[-20] " style={{ backgroundColor: '#d3f4f5' }}>
         <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-center py-12 md:py-24 lg:py-32">
             <div className="relative z-10 lg:-mr-24">
@@ -57,7 +57,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[300px] lg:h-[450px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-[300px] lg:h-[550px] rounded-xl overflow-hidden shadow-2xl">
               {heroImage && (
                 <Image
                   src={heroImage.imageUrl}
