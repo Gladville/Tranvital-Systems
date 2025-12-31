@@ -7,15 +7,15 @@ export default function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        'flex items-center gap-2 text-lg md:text-xl font-bold font-headline',
+        'flex items-center gap-1 pl-5 text-lg md:text-xl font-bold font-headline',
         className
       )}
     >
-      <div className="p-1.5 bg-primary text-primary-foreground rounded-md">
+      <div className="bg-primary text-primary-foreground rounded-md">
         <Atom className="h-5 w-5" />
       </div>
       <span className="text-primary text-sm md:text-lg">Tranvital</span>
-      <span className="text-foreground text-sm md:text-lg ml">Systems</span>
+      <span className="text-foreground text-sm md:text-lg ">Systems</span>
     </Link>
   );
 }
