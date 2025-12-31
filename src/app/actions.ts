@@ -2,7 +2,6 @@
 
 import { z } from 'zod';
 import { productFinderAssistant } from '@/ai/flows/product-finder-assistant';
-import { products } from '@/lib/data';
 
 // Contact Form Action
 const contactFormSchema = z.object({
@@ -41,20 +40,14 @@ export async function findProductAction(prevState: any, formData: FormData) {
     const validation = productFinderSchema.safeParse({ requirements: rawRequirements });
 
     if (!validation.success) {
-        return { recommendedProducts: [], error: validation.error.errors.map(e => e.message).join(', ') };
+        return { recommendation: null, error: validation.error.errors.map(e => e.message).join(', ') };
     }
 
     try {
-        const result = await productFinderAssistant({
-          requirements: validation.data.requirements,
-          products: products,
-         });
-        
-        const recommendedProducts = products.filter(p => result.recommendedProductIds.includes(p.id));
-
-        return { recommendedProducts, error: null };
+        const result = await productFinderAssistant({ requirements: validation.data.requirements });
+        return { recommendation: result.recommendation, error: null };
     } catch (error) {
         console.error("AI Product Finder Error:", error);
-        return { recommendedProducts: [], error: "Sorry, I couldn't process your request at the moment. Please try again later." };
+        return { recommendation: null, error: "Sorry, I couldn't process your request at the moment. Please try again later." };
     }
 }
