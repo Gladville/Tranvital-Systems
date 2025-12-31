@@ -74,7 +74,7 @@ export default function Header() {
               className={cn(
                 'font-medium transition-colors hover:text-primary',
                 pathname === link.href
-                  ? 'text-foreground'
+                  ? 'text-primary'
                   : 'text-muted-foreground'
               )}
             >
@@ -87,7 +87,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <div className="mx-auto flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-auto">
           <Link href="/product-finder" className="hidden md:block">
             <Button
               variant="outline"
