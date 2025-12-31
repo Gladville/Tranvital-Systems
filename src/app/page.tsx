@@ -22,14 +22,30 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import ProductCard from '@/components/ProductCard';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero_image');
+const contactHeroImage = PlaceHolderImages.find((img) => img.id === 'contact_hero');
+
 
 export default function Home() {
   const featuredProducts = products.slice(0, 3);
 
   return (
     <div className="flex flex-col min-h-[100dvh] mt-[-20]">
-      <section className="relative w-full mt-[-20] " style={{ backgroundColor: '#d3f4f5' }}>
-        <div className="container px-4 md:px-6">
+      <section className="relative w-full mt-[-20]">
+        {contactHeroImage && (
+          <Image
+            src={contactHeroImage.imageUrl}
+            alt="faded background"
+            data-ai-hint="faded background"
+            fill
+            className="object-cover opacity-20"
+          />
+        )}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: '#d3f4f5', opacity: 0.9 }}
+        ></div>
+
+        <div className="relative container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-center py-12 md:py-24 lg:py-32">
             <div className="relative z-10 lg:-mr-24">
               <div className="bg-primary p-8 md:p-12 rounded-lg shadow-2xl text-primary-foreground">
