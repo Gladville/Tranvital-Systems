@@ -87,7 +87,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex items-center gap-2 mx-auto">
           <Link href="/product-finder" className="hidden md:block">
             <Button
               variant="outline"
