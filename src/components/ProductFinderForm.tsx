@@ -8,9 +8,11 @@ import { Label } from '@/components/ui/label';
 import { findProductAction } from '@/app/actions';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { Lightbulb, Bot, AlertCircle } from 'lucide-react';
+import type { Product } from '@/lib/types';
+import ProductCard from './ProductCard';
 
-const initialState: { recommendation: string | null; error: string | null } = {
-  recommendation: null,
+const initialState: { recommendedProducts: Product[]; error: string | null } = {
+  recommendedProducts: [],
   error: null,
 };
 
@@ -64,26 +66,41 @@ export function ProductFinderForm() {
         </CardFooter>
       </form>
       
-      {(state.recommendation || state.error) && (
+      {(state.recommendedProducts.length > 0 || state.error || (state.recommendedProducts.length === 0 && !state.error && document.getElementById('requirements')?.['value'])) && (
         <CardContent>
-            <div className="mt-6">
-            {state.recommendation && (
+          <div className="mt-6">
+            {state.recommendedProducts.length > 0 && (
+              <div className='space-y-4'>
                 <Alert>
+                  <Bot className="h-4 w-4" />
+                  <AlertTitle className="font-headline">AI Recommendations</AlertTitle>
+                </Alert>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {state.recommendedProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {state.recommendedProducts.length === 0 && !state.error && document.getElementById('requirements')?.['value'] && (
+                 <Alert>
                     <Bot className="h-4 w-4" />
-                    <AlertTitle className="font-headline">AI Recommendation</AlertTitle>
+                    <AlertTitle className="font-headline">No Results</AlertTitle>
                     <AlertDescription>
-                        <p className="whitespace-pre-wrap">{state.recommendation}</p>
+                        <p>We couldn't find any products that match your requirements. Please try refining your search.</p>
                     </AlertDescription>
                 </Alert>
             )}
+
             {state.error && (
-                <Alert variant="destructive">
-                    <AlertCircle className="h-4 w-4" />
-                    <AlertTitle>Error</AlertTitle>
-                    <AlertDescription>{state.error}</AlertDescription>
-                </Alert>
+              <Alert variant="destructive">
+                <AlertCircle className="h-4 w-4" />
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>{state.error}</AlertDescription>
+              </Alert>
             )}
-            </div>
+          </div>
         </CardContent>
       )}
 
